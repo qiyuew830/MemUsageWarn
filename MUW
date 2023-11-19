@@ -1,0 +1,14 @@
+import time
+import psutil
+from playsound import playsound
+
+def main():
+    mem = (psutil.virtual_memory().percent)
+    print(mem)
+
+    if mem > 85:
+        playsound('warn.mp3')
+    else:
+        time.sleep(10)
+        main()
+main()
